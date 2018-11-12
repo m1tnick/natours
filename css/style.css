@@ -6,3 +6,32 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    /* The height of the container will be the percentage of the vh(view port height) */
+    height: 95vh;
+    /* For images, we need to use url */
+    background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+    /* Forces the image to cover all the view port */
+    background-size: cover;
+    /* Forces the image to always be at the top of the container, 
+        so when it resizes the top stays always the same */
+    background-position: top;
+    /* Clips part of the image. Defines what part of the image is visible*/
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
