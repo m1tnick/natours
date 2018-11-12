@@ -56,14 +56,14 @@ body {
     position: relative;
 }
 
-.logo-box {
+.header__logo-box {
     /* Parent needs to be relative */
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 3.5rem;
 }
 
@@ -75,7 +75,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -91,7 +91,7 @@ body {
     */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -99,7 +99,7 @@ body {
     animation: moveInRight 1s ease-out;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -191,16 +191,16 @@ body {
     opacity: 0;
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom .5s ease-out .75s;
     /* This makes the element use the same properties of the animation in the beginning */
     animation-fill-mode: backwards;
