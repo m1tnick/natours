@@ -1,0 +1,25 @@
+/*
+This universal selector resets CSS for all browsers
+*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Root font-size is set on the html selector 
+    It is set to 62.5% because it helps making 
+    calculations for the rest of the elements.
+    Default browser font-size is usually 16px so
+    this results in 10px.
+    This defines what 1rem is.
+*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
