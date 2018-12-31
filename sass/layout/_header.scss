@@ -2,7 +2,7 @@
     /* The height of the container will be the percentage of the vh(view port height) */
     height: 95vh;
     /* For images, we need to use url */
-    background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+    background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
     /* Forces the image to cover all the view port */
     background-size: cover;
     /* Forces the image to always be at the top of the container, 
@@ -11,6 +11,10 @@
     /* Clips part of the image. Defines what part of the image is visible*/
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em)  {
+        background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+    }
 
     @include respond(phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
