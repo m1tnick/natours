@@ -1,6 +1,6 @@
 .header {
     /* The height of the container will be the percentage of the vh(view port height) */
-    height: 95vh;
+    height: 85vh;
     /* For images, we need to use url */
     background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
     /* Forces the image to cover all the view port */
@@ -8,11 +8,18 @@
     /* Forces the image to always be at the top of the container, 
         so when it resizes the top stays always the same */
     background-position: top;
-    /* Clips part of the image. Defines what part of the image is visible*/
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
 
-    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em)  {
+    @supports (clip-path: polygon(0,0 )) or (-webkit-clip-path: polygon(0,0)) {
+        /* Clips part of the image. Defines what part of the image is visible*/
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+            (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            (min-width: 125em)  {
         background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
     }
 
@@ -20,8 +27,6 @@
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     }
-
-    position: relative;
 
     &__logo-box {
         /* Parent needs to be relative */
